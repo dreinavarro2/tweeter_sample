@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-	resources :users
-
-  root 'pages#index' #get '/' => 'pages/index'
-  get '/about' => 'pages#about'
+ 	devise_for :users
+	#resources :users
+	resources :tweets
+	
+	get '/about' => 'pages#about'
 	get '/another' => 'pages#another'
+
+	root 'pages#index' #get '/' => 'pages/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
